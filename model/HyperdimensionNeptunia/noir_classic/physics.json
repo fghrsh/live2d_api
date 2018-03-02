@@ -1,0 +1,16 @@
+{
+	"type":"Live2D Physics",
+	"physics_hair":[
+		{
+			"setup":{
+				"length":0.3,
+				"regist":1,
+				"mass":0.1
+			},
+			"src":[
+			],
+			"targets":[
+			]
+		}
+	]
+}
