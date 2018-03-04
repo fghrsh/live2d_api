@@ -9,9 +9,9 @@ Live2D 看板娘插件 (https://www.fghrsh.net/post/123.html) 上使用的后端
 - 支持 单模型 单皮肤 切换、多组皮肤 递归穷举
 - 支持 同分组 多个模型 或 多个路径 的 加载切换
 
-## 使用
+### 使用
 
-### 目录结构
+#### 目录结构
 
 ```shell
 │  model_list.json              // 模型列表
@@ -32,11 +32,11 @@ Live2D 看板娘插件 (https://www.fghrsh.net/post/123.html) 上使用的后端
         name-to-lower.php       // 文件名格式化
 ```
 
-### 添加模型
+#### 添加模型
 
 - 单模型 单皮肤 切换
- - 单次加载只输出一个皮肤
- - 皮肤放在 `textures` 文件夹，自动识别
+    - 单次加载只输出一个皮肤
+    - 皮肤放在 `textures` 文件夹，自动识别
 
 ```shell
 │  index.json
@@ -55,9 +55,9 @@ Live2D 看板娘插件 (https://www.fghrsh.net/post/123.html) 上使用的后端
 ```
 
 - 单模型 多组皮肤 递归穷举
- - 多组皮肤 组合模型、穷举组合
- - 皮肤文件夹按 `texture_XX` 命名
- - 添加 `textures_order.json` 列出组合
+    - 多组皮肤 组合模型、穷举组合
+    - 皮肤文件夹按 `texture_XX` 命名
+    - 添加 `textures_order.json` 列出组合
 ```shell
 │  index.json
 │  model.moc
@@ -111,7 +111,7 @@ textures.cache
 ```
 
 - 同分组 多个模型 或 多个路径 切换
- - 修改 `model_list.json` 添加多个模型
+    - 修改 `model_list.json` 添加多个模型
 
 ```shell
 │
@@ -141,31 +141,32 @@ model_list.json
 ```json
 {
     "models": [
-        "GroupName/ModelName",      // 分组 1 模型 1
+        "GroupName/ModelName",
         [
-            "Group1/Model1",        // 分组 2 模型 1
-            "Group1/Model2",        // 分组 2 模型 2
-            "Group2/Model1"         // 分组 2 模型 3
+            "Group1/Model1",
+            "Group1/Model2",
+            "Group2/Model1"
         ]
     ],
     "messages": [
-        "Example 1",                // 分组 1 欢迎语
-        "Example 2"                 // 分组 2 欢迎语
+        "Example 1",
+        "Example 2"
     ]
 }
 ```
 
-### 接口用法
- - `/add/` - 检测 新增皮肤 并更新 缓存列表
- - `/get/?id=1-23` 获取 分组 1 的 第 23 号 皮肤
- - `/rand/?id=1` 根据 上一分组 随机切换
- - `/switch/?id=1` 根据 上一分组 顺序切换
- - `/rand_textures/?id=1-23` 根据 上一皮肤 随机切换 同分组其他皮肤
- - `/switch_textures/?id=1-23` 根据 上一皮肤 顺序切换 同分组其他皮肤
+#### 接口用法
+- `/add/` - 检测 新增皮肤 并更新 缓存列表
+- `/get/?id=1-23` 获取 分组 1 的 第 23 号 皮肤
+- `/rand/?id=1` 根据 上一分组 随机切换
+- `/switch/?id=1` 根据 上一分组 顺序切换
+- `/rand_textures/?id=1-23` 根据 上一皮肤 随机切换 同分组其他皮肤
+- `/switch_textures/?id=1-23` 根据 上一皮肤 顺序切换 同分组其他皮肤
 
-## 版权声明
+### 版权声明
 
 - (>▽<) 都看到这了，点个 Star 吧 ~
-**API 内所有模型 版权均属于原作者，仅供研究学习，不得用于商业用途**
+
+**API 内所有模型 版权均属于原作者，仅供研究学习，不得用于商业用途**  
 
 MIT © FGHRSH
