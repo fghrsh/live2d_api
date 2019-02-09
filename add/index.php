@@ -6,20 +6,24 @@ require '../tools/modelTextures.php';
 $modelList = new modelList();
 $modelTextures = new modelTextures();
 
-$modelList = $modelList->get_list()['models'];
+$modelList = $modelList->get_list();
+$modelList = $modelList['models'];
 
 foreach ($modelList as $modelName) {
-    if (file_exists('../model/'.$modelName.'/textures.cache')) {
+    if (!is_array($modelName) && file_exists('../model/'.$modelName.'/textures.cache')) {
         
         $textures = $texturesNew = array();
-        foreach ($modelTextures->get_list($modelName)['textures'] as $v) $textures[] = json_encode($v, JSON_UNESCAPED_SLASHES);
-        foreach ($modelTextures->get_textures($modelName) as $v) $texturesNew[] = json_encode($v, JSON_UNESCAPED_SLASHES);
+        $modelTexturesList = $modelTextures->get_list($modelName);
+        $modelNameTextures = $modelTextures->get_textures($modelName);
+        if (is_array($modelTexturesList)) foreach ($modelTexturesList['textures'] as $v) $textures[] = str_replace('\/', '/', json_encode($v));
+        if (is_array($modelNameTextures)) foreach ($modelNameTextures as $v) $texturesNew[] = str_replace('\/', '/', json_encode($v));
         
-        if ($textures == NULL) continue; elseif (empty(array_diff($texturesNew, $textures))) {
+        $texturesDiff = array_diff($texturesNew, $textures);
+        if (empty($textures)) continue; elseif (empty($texturesDiff)) {
             echo '<p>'.$modelName.' / textures.cache / No Update.</p>'; 
         } else {
             foreach (array_values(array_unique(array_merge($textures, $texturesNew))) as $v) $texturesMerge[] = json_decode($v, 1);
-            file_put_contents('../model/'.$modelName.'/textures.cache', json_encode($texturesMerge, JSON_UNESCAPED_SLASHES));
+            file_put_contents('../model/'.$modelName.'/textures.cache', str_replace('\/', '/', json_encode($texturesMerge)));
             echo '<p>'.$modelName.' / textures.cache / Updated.</p>';
         }
         

@@ -3,9 +3,11 @@ isset($_GET['id']) ? $id = $_GET['id'] : exit('error');
 
 require '../tools/modelList.php';
 require '../tools/modelTextures.php';
+require '../tools/jsonCompatible.php';
 
 $modelList = new modelList();
 $modelTextures = new modelTextures();
+$jsonCompatible = new jsonCompatible();
 
 $id = explode('-', $id);
 $modelId = (int)$id[0];
@@ -49,4 +51,4 @@ if (isset($json['expressions'])) {
 }
 
 header("Content-type: application/json");
-echo json_encode($json, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+echo $jsonCompatible->json_encode($json);

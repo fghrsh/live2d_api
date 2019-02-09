@@ -12,7 +12,7 @@
             $textures = json_decode(file_get_contents('../model/'.$modelName.'/textures.cache'), true);
         } else {
             $textures = self::get_textures($modelName);
-            file_put_contents('../model/'.$modelName.'/textures.cache', json_encode($textures, JSON_UNESCAPED_SLASHES));
+            if (!empty($textures)) file_put_contents('../model/'.$modelName.'/textures.cache', str_replace('\/', '/', json_encode($textures)));
         } return isset($textures) ? array('textures' => $textures) : false;
     }
     
@@ -24,13 +24,13 @@
                     $tmp3 = array(); foreach (glob('../model/'.$modelName.'/'.$textures_dir.'/*') as $n => $m)
                         $tmp3['merge'.$n] = str_replace('../model/'.$modelName.'/', '', $m);
                 $tmp2 = array_merge_recursive($tmp2, $tmp3);   }
-                foreach ($tmp2 as $v4) $tmp4[$k][] = json_encode($v4, JSON_UNESCAPED_SLASHES);
+                foreach ($tmp2 as $v4) $tmp4[$k][] = str_replace('\/', '/', json_encode($v4));
                 $tmp = self::array_exhaustive($tmp, $tmp4[$k]);                                                                    }
             foreach ($tmp as $v) $textures[] = json_decode('['.$v.']', 1); return $textures;
         } else {
             foreach (glob('../model/'.$modelName.'/textures/*') as $v)
                 $textures[] = str_replace('../model/'.$modelName.'/', '', $v);
-            return $textures;
+            return empty($textures) ? null : $textures;
         }
     }
     

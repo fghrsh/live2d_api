@@ -2,8 +2,10 @@
 isset($_GET['id']) ? $modelId = (int)$_GET['id'] : exit('error');
 
 require '../tools/modelList.php';
+require '../tools/jsonCompatible.php';
 
 $modelList = new modelList();
+$jsonCompatible = new jsonCompatible();
 
 $modelList = $modelList->get_list();
 
@@ -14,8 +16,8 @@ while ($modelRandNewId) {
 }
 
 header("Content-type: application/json");
-echo json_encode(array('model' => array(
+echo $jsonCompatible->json_encode(array('model' => array(
     'id' => $modelRandId,
     'name' => $modelList['models'][$modelRandId-1],
     'message' => $modelList['messages'][$modelRandId-1]
-)), JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+)));
