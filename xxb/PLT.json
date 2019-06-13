@@ -1,0 +1,48 @@
+{
+	"type": "Live2D Model Setting",
+	"name": "PLT",
+	"model": "PLT.moc",
+	"textures": [
+		"PLT.2048/texture_00.png"
+	],
+	"motions": {
+	"start":[
+		{
+			"text": "欢迎{$username}呢！"
+		}
+	],
+	"idle":[
+		{
+			"file": "motions/smile.mtn",
+			"text": "现在的时间是{$timenow}呢！"
+		},
+		{
+			"file": "motions/2.mtn",
+			"text": "请温柔点呢~"
+		},
+		{
+			"file": "motions/flag.mtn",
+			"text": "请温柔点呢~"
+		}
+	]
+},
+     "expressions": [
+            {
+                "name": "F00.exp.json",
+                "file": "expressions/F00.exp.json"
+            },
+            {
+                "name": "F01.exp.json",
+                "file": "expressions/F01.exp.json"
+            },
+            {
+                "name": "F02.exp.json",
+                "file": "expressions/F02.exp.json"
+            },
+            {
+                "name": "F03.exp.json",
+                "file": "expressions/F03.exp.json"
+            }
+        ],
+	"physics": "physics.json"
+}

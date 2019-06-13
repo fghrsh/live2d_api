@@ -1,0 +1,125 @@
+{
+    "type": "Live2D Model Setting",
+    "name": "ina",
+    "model": "ina.moc",
+    "textures": [
+            "textures.1024/00.png"
+    ],
+    "physics": "ina.physics.json",
+    "pose": "ina.pose.json",
+    "expressions": [{
+            "name": "f01",
+            "file": "expressions/f01.exp.json"
+        }, {
+            "name": "f02",
+            "file": "expressions/f02.exp.json"
+        }, {
+            "name": "f03",
+            "file": "expressions/f03.exp.json"
+        }, {
+            "name": "f04",
+            "file": "expressions/f04.exp.json"
+        }, {
+            "name": "f05",
+            "file": "expressions/f05.exp.json"
+        }, {
+            "name": "f06",
+            "file": "expressions/f06.exp.json"
+        }, {
+            "name": "f07",
+            "file": "expressions/f07.exp.json"
+        }, {
+            "name": "f08",
+            "file": "expressions/f08.exp.json"
+        }
+    ],
+
+
+
+
+
+    "layout": {
+        "center_x": 0,
+        "y": 1.0,
+        "width": 1.8
+    },
+    "hit_areas": [{
+            "name": "head",
+            "id": "D_REF.HEAD"
+        }, {
+            "name": "body",
+            "id": "D_REF.BODY"
+        }, {
+            "name": "bust",
+            "id": "D_REF.BUST"
+        }, {
+            "name": "bust_l",
+            "id": "D_REF.BUST_L"
+        }, {
+            "name": "bust_r",
+            "id": "D_REF.BUST_R"
+        }
+    ],
+    "motions": {
+        "idle": [{
+                "file": "motions/idle/ina_idle_01.mtn",
+                "fade_in": 2000,
+                "fade_out": 2000
+            }, {
+                "file": "motions/idle/ina_idle_02.mtn",
+                "fade_in": 2000,
+                "fade_out": 2000
+            }, {
+                "file": "motions/idle/ina_idle_03.mtn",
+                "fade_in": 2000,
+                "fade_out": 2000
+            }
+        ],
+        "tap_body": [{
+                "file": "motions/tap/ina_m_01.mtn"
+            }, {
+                "file": "motions/tap/ina_m_02.mtn"
+            }, {
+                "file": "motions/tap/ina_m_03.mtn"
+            }, {
+                "file": "motions/tap/ina_m_04.mtn"
+            }, {
+                "file": "motions/tap/ina_m_05.mtn"
+            }, {
+                "file": "motions/tap/ina_m_06.mtn"
+            }, {
+                "file": "motions/tap/ina_m_07.mtn"
+            }
+        ],
+        "tap_bust": [{
+                "file": "motions/tap/ina_m_10.mtn"
+            }, {
+                "file": "motions/tap/ina_m_11.mtn"
+            }
+        ],
+        "pinch_in": [{
+                "file": "motions/pinch/ina_normal_07.mtn"
+            }, {
+                "file": "motions/tap/ina_normal_11.mtn"
+            }
+        ],
+        "pinch_out": [{
+                "file": "motions/pinch/ina_normal_01.mtn"
+            }
+        ],
+        "drag": [{
+                "file": "motions/tap/ina_normal_11.mtn"
+            }
+        ],
+
+        "shake": [{
+                "file": "motions/shake/ina_normal_03.mtn",
+                "fade_in": 500
+            }
+        ],
+        "flick_head": [{
+                "file": "motions/flick/ina_normal_08.mtn"
+            }
+        ]
+    }
+}

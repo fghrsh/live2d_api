@@ -1,0 +1,107 @@
+{
+    "type": "Live2D Model Setting",
+    "name": "shima",
+    "model": "shima.moc",
+    "textures": [
+            "textures.512/00.png",
+            "textures.512/01.png",
+            "textures.512/02.png"
+    ],
+    "physics": "shima.physics.json",
+    "pose": "shima.pose.json",
+    "expressions": [{
+            "name": "f01",
+            "file": "expressions/f01.exp.json"
+        }, {
+            "name": "f02",
+            "file": "expressions/f02.exp.json"
+        }, {
+            "name": "f03",
+            "file": "expressions/f03.exp.json"
+        }, {
+            "name": "f04",
+            "file": "expressions/f04.exp.json"
+        }, {
+            "name": "f05",
+            "file": "expressions/f05.exp.json"
+        }, {
+            "name": "f06",
+            "file": "expressions/f06.exp.json"
+        }, {
+            "name": "f07",
+            "file": "expressions/f07.exp.json"
+        }, {
+            "name": "f08",
+            "file": "expressions/f08.exp.json"
+        }
+    ],
+    "layout": {
+        "center_x": 0.0,
+        "y": 1,
+        "width": 2
+    },
+    "hit_areas": [{
+            "name": "head",
+            "id": "D_REF.HEAD"
+        }, {
+            "name": "body",
+            "id": "D_REF.BODY"
+        }, {
+            "name": "bust",
+            "id": "D_REF.BUST"
+        }
+    ],
+    "motions": {
+        "idle": [{
+                "file": "motions/idle/shima_idle_01.mtn",
+                "fade_in": 2000,
+                "fade_out": 2000
+            }, {
+                "file": "motions/idle/shima_idle_02.mtn",
+                "fade_in": 2000,
+                "fade_out": 2000
+            }, {
+                "file": "motions/idle/shima_idle_03.mtn",
+                "fade_in": 2000,
+                "fade_out": 2000
+            }
+        ],
+        "tap_body": [{
+                "file": "motions/tap/shima_m_01.mtn"
+            }, {
+                "file": "motions/tap/shima_m_02.mtn"
+            }, {
+                "file": "motions/tap/shima_m_03.mtn"
+            }, {
+                "file": "motions/tap/shima_m_04.mtn"
+            }, {
+                "file": "motions/tap/shima_m_05.mtn"
+            }, {
+                "file": "motions/tap/shima_m_06.mtn"
+            }, {
+                "file": "motions/tap/shima_m_07.mtn"
+            }
+        ],
+        "tap_bust": [{
+                "file": "motions/tap/shima_m_11.mtn"
+            }
+        ],
+        "pinch_in": [{
+                "file": "motions/pinch/shima_normal_07.mtn"
+            }
+        ],
+        "pinch_out": [{
+                "file": "motions/pinch/shima_normal_01.mtn"
+            }
+        ],
+        "shake": [{
+                "file": "motions/shake/shima_normal_03.mtn",
+                "fade_in": 500
+            }
+        ],
+        "flick_head": [{
+                "file": "motions/flick/shima_normal_06.mtn"
+            }
+        ]
+    }
+}

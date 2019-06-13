@@ -1,0 +1,37 @@
+{
+	"version":"Sample 1.0.0",
+	"model":"mikoto.moc",
+	"textures":[
+		"texture.1024/00.png",
+		"texture.1024/01.png"
+	],
+	"expressions":[
+		{"name":"f01.exp.json","file":"expressions/f01.exp.json"},
+		{"name":"f02.exp.json","file":"expressions/f02.exp.json"},
+		{"name":"f03.exp.json","file":"expressions/f03.exp.json"},
+		{"name":"f04.exp.json","file":"expressions/f04.exp.json"},
+		{"name":"f05.exp.json","file":"expressions/f05.exp.json"},
+		{"name":"f06.exp.json","file":"expressions/f06.exp.json"},
+		{"name":"f07.exp.json","file":"expressions/f07.exp.json"},
+		{"name":"f08.exp.json","file":"expressions/f08.exp.json"}
+	],
+	"motions":{
+		"idle":[
+			{"file":"motions/tap/motion1.mtn"},
+			{"file":"motions/tap/motion10.mtn"},
+			{"file":"motions/tap/motion11.mtn"},
+			{"file":"motions/tap/motion12.mtn"},
+			{"file":"motions/tap/motion13.mtn"},
+			{"file":"motions/tap/motion14.mtn"},
+			{"file":"motions/tap/motion2.mtn"},
+			{"file":"motions/tap/motion3.mtn"},
+			{"file":"motions/tap/motion4.mtn"},
+			{"file":"motions/tap/motion5.mtn"},
+			{"file":"motions/tap/motion6.mtn"},
+			{"file":"motions/tap/motion7.mtn"},
+			{"file":"motions/tap/motion8.mtn"},
+			{"file":"motions/tap/motion9.mtn"}
+		]
+	},
+	"physics":"physics.json"
+}

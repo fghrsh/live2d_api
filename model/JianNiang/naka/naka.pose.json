@@ -1,0 +1,109 @@
+{
+	"type":"Live2D Pose",
+
+    "parts_visible":
+    [
+        
+        
+        {
+        	"group":
+        	[
+        		{
+        			"id":"PARTS_01_HAND_L_A_001",
+        			"link":
+	        		[
+		        		"PARTS_01_HAND_L_A_002"
+	        		]
+        		},
+        		{
+        			"id":"PARTS_01_HAND_L_B_001",
+        			"link":
+	        		[
+		        		"PARTS_01_HAND_L_B_002"
+	        		]
+        		},
+        		{
+        			"id":"PARTS_01_HAND_L_C_001",
+        			"link":
+	        		[
+		        		"PARTS_01_HAND_L_C_002"
+	        		]
+        		},
+        		{
+        			"id":"PARTS_01_HAND_L_D_001",
+        			"link":
+	        		[
+		        		"PARTS_01_HAND_L_D_002"
+	        		]
+        		},
+        		{
+        			"id":"PARTS_01_HAND_L_E_001",
+        			"link":
+	        		[
+		        		"PARTS_01_HAND_L_E_002"
+	        		]
+        		},
+        		
+        		{
+        			"id":"PARTS_01_HAND_L_F_001",
+        			"link":
+	        		[
+		        		"PARTS_01_HAND_L_F_002"
+	        		]
+        		}
+        		
+        	]
+        },
+        
+         {
+        	"group":
+        	[
+        		{
+        			"id":"PARTS_01_HAND_R_A_001",
+        			"link":
+	        		[
+		        		"PARTS_01_HAND_R_A_002"
+	        		]
+        		},
+        		{
+        			"id":"PARTS_01_HAND_R_B_001",
+        			"link":
+	        		[
+		        		"PARTS_01_HAND_R_B_002"
+	        		]
+        		},
+        		{
+        			"id":"PARTS_01_HAND_R_C_001",
+        			"link":
+	        		[
+		        		"PARTS_01_HAND_R_C_002"
+	        		]
+        		},
+        		{
+        			"id":"PARTS_01_HAND_R_D_001",
+        			"link":
+	        		[
+		        		"PARTS_01_HAND_R_D_002"
+	        		]
+        		},
+        		{
+        			"id":"PARTS_01_HAND_R_E_001",
+        			"link":
+	        		[
+		        		"PARTS_01_HAND_R_E_002"
+	        		]
+        		},
+        		{
+        			"id":"PARTS_01_HAND_R_F_001",
+        			"link":
+	        		[
+		        		"PARTS_01_HAND_R_F_002"
+	        		]
+        		}
+        	]
+        }
+        
+        
+    ]
+
+}
