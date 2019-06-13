@@ -11,6 +11,10 @@ Live2D 看板娘插件 (https://www.fghrsh.net/post/123.html) 上使用的后端
 
 ## 使用
 
+### 环境要求
+- PHP 版本 >= 5.2
+- 依赖 PHP 扩展：json
+
 ### 目录结构
 
 ```shell
