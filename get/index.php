@@ -46,6 +46,7 @@ if (isset($json['motions'])) {
     			}
     	}
     }
+    $json['motions'] = $motions;
 }
 
 if (isset($json['expressions'])) {
