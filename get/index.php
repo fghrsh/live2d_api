@@ -26,40 +26,20 @@ if (is_array($modelName)) {
     }
 }
 
-$textures = $json['textures'];
-foreach ($textures as $key => $texture){
-		$textures[$key] = '../model/' . $modelName . '/' . $texture;
-}
-$json['textures'] = $textures;
+foreach ($json['textures'] as $k => $texture)
+	$json['textures'][$k] = '../model/' . $modelName . '/' . $texture;
 
 $json['model'] = '../model/'.$modelName.'/'.$json['model'];
 if (isset($json['pose'])) $json['pose'] = '../model/'.$modelName.'/'.$json['pose'];
 if (isset($json['physics'])) $json['physics'] = '../model/'.$modelName.'/'.$json['physics'];
 
-if (isset($json['motions'])) {
-    $motions = $json['motions'];
-    foreach ($motions as $key1 => $motion){
-    	foreach($motion as $key2 => $resource){
-    		foreach ($resource as $key3 => $value)
-    			if($key3 == 'file'){
-    				$motions[$key1][$key2][$key3] = '../model/' . $modelName . '/' . $value;
-    			}
-    	}
-    }
-    $json['motions'] = $motions;
-}
+if (isset($json['motions']))
+    foreach ($json['motions'] as $k => $v) foreach($v as $k2 => $v2) foreach ($v2 as $k3 => $motion)
+        if ($k3 == 'file') $json['motions'][$k][$k2][$k3] = '../model/' . $modelName . '/' . $motion;
 
-if (isset($json['expressions'])) {
-    $expressions = $json['expressions'];
-    foreach ($expressions as $key1 => $expression){
-    	foreach($expression as $key2 => $value){
-    		if($key2 == 'file'){
-    			$expressions[$key1][$key2] = '../model/' . $modelName . '/' . $value;
-    		}
-    	}
-    }
-    $json['expressions'] = $expressions;
-}
+if (isset($json['expressions']))
+    foreach ($json['expressions'] as $k => $v) foreach($v as $k2 => $expression)
+        if ($k2 == 'file') $json['expressions'][$k][$k2] = '../model/' . $modelName . '/' . $expression;
 
 header("Content-type: application/json");
 echo $jsonCompatible->json_encode($json);
