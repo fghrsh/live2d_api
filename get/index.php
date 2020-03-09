@@ -26,9 +26,10 @@ if (is_array($modelName)) {
     }
 }
 
-$textures = json_encode($json['textures']);
-$textures = str_replace('texture', '../model/'.$modelName.'/texture', $textures);
-$textures = json_decode($textures, 1);
+$textures = $json['textures'];
+foreach ($textures as $key => $texture){
+		$textures[$key] = '../model/' . $modelName . '/' . $texture;
+}
 $json['textures'] = $textures;
 
 $json['model'] = '../model/'.$modelName.'/'.$json['model'];
@@ -36,17 +37,27 @@ if (isset($json['pose'])) $json['pose'] = '../model/'.$modelName.'/'.$json['pose
 if (isset($json['physics'])) $json['physics'] = '../model/'.$modelName.'/'.$json['physics'];
 
 if (isset($json['motions'])) {
-    $motions = json_encode($json['motions']);
-    $motions = str_replace('sounds', '../model/'.$modelName.'/sounds', $motions);
-    $motions = str_replace('motions', '../model/'.$modelName.'/motions', $motions);
-    $motions = json_decode($motions, 1);
+    $motions = $json['motions'];
+    foreach ($motions as $key1 => $motion){
+    	foreach($motion as $key2 => $resource){
+    		foreach ($resource as $key3 => $value)
+    			if($key3 == 'file'){
+    				$motions[$key1][$key2][$key3] = '../model/' . $modelName . '/' . $value;
+    			}
+    	}
+    }
     $json['motions'] = $motions;
 }
 
 if (isset($json['expressions'])) {
-    $expressions = json_encode($json['expressions']);
-    $expressions = str_replace('expressions', '../model/'.$modelName.'/expressions', $expressions);
-    $expressions = json_decode($expressions, 1);
+    $expressions = $json['expressions'];
+    foreach ($expressions as $key1 => $expression){
+    	foreach($expression as $key2 => $value){
+    		if($key2 == 'file'){
+    			$expressions[$key1][$key2] = '../model/' . $modelName . '/' . $value;
+    		}
+    	}
+    }
     $json['expressions'] = $expressions;
 }
 
