@@ -35,7 +35,7 @@ if (isset($json['physics'])) $json['physics'] = '../model/'.$modelName.'/'.$json
 
 if (isset($json['motions']))
     foreach ($json['motions'] as $k => $v) foreach($v as $k2 => $v2) foreach ($v2 as $k3 => $motion)
-        if ($k3 == 'file') $json['motions'][$k][$k2][$k3] = '../model/' . $modelName . '/' . $motion;
+        if ($k3 == 'file' || $k3 == 'sound') $json['motions'][$k][$k2][$k3] = '../model/' . $modelName . '/' . $motion;
 
 if (isset($json['expressions']))
     foreach ($json['expressions'] as $k => $v) foreach($v as $k2 => $expression)
