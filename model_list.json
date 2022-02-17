@@ -30,7 +30,8 @@
             "HyperdimensionNeptunia/histoire",
             "HyperdimensionNeptunia/histoirenohover"
         ],
-        "KantaiCollection/murakumo"
+        "KantaiCollection/murakumo",
+        "koharu/koharu.model.json"
     ],
     "messages": [
         "来自 Potion Maker 的 Pio 酱 ~",
